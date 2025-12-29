@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/inserimentoArrayIndici.iml" filepath="$PROJECT_DIR$/.idea/inserimentoArrayIndici.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/quickSort.iml" filepath="$PROJECT_DIR$/.idea/quickSort.iml" />
     </modules>
   </component>
 </project>
