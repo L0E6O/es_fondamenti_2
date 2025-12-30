@@ -22,9 +22,11 @@ int inserimentoOrdinato(struct list *ptr, int val) {
 
     for (int i = ptr->tail; i != pos; i = (i-1+ptr->size)%ptr->size) { //shift di un passo a destra
         ptr->buffer[i] = ptr->buffer[(i-1 + ptr->size) % ptr->size];
+        //non basta fare i-1, in quanto potrebbe dare un numero negativo e quindi errore
     }
 
     ptr->buffer[pos] = val;
-    ptr->tail = (ptr->tail+1)%ptr->size; //non faccio +ptr->size perché sto sommando due numeri positivi e non rischio quindi di andare in negativo
+    ptr->tail = (ptr->tail+1)%ptr->size;
+    //non faccio +ptr->size perché sto sommando due numeri positivi e non rischio quindi di andare in negativo
     return 0;
 }
