@@ -7,7 +7,7 @@ struct list{
 };
 
 struct list** dupesTarget(struct list **ptr, float target, int n, int *i) {
-   struct list **v = (struct list**) malloc(sizeof(int)*n);
+   struct list **v = (struct list**) malloc(sizeof(struct list)*n);
    *i = 0;
    while (*ptr!=NULL) {
       if ((*ptr)->value == target) {
@@ -15,7 +15,7 @@ struct list** dupesTarget(struct list **ptr, float target, int n, int *i) {
          newNode->value = target;
          newNode->next = (*ptr)->next;
          (*ptr)->next = newNode;
-         v[(*i)++] = *ptr;
+         v[(*i)++] = newNode;
          ptr = &(*ptr)->next->next;
       }else
          ptr = &(*ptr)->next;
