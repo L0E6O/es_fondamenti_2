@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/bubbleSort.iml" filepath="$PROJECT_DIR$/.idea/bubbleSort.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/BubbleSortArray.iml" filepath="$PROJECT_DIR$/.idea/BubbleSortArray.iml" />
     </modules>
   </component>
 </project>
