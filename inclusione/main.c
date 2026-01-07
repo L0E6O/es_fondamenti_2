@@ -1,3 +1,5 @@
+#include <stdlib.h>
+
 struct record {
     int value;
     int next;
