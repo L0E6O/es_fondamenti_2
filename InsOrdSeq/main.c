@@ -32,8 +32,8 @@ bool InsOrd(struct list *ptr, float value) {
         pos = (pos + 1) % ptr->size;
     }
 
-    ptr->tail = (ptr->head + 1) % ptr->size;
-    for (int i = ptr->tail - 1; i > pos; i--) {
+    ptr->tail = (ptr->tail + 1) % ptr->size;
+    for (int i = (ptr->tail - 1 + ptr->size)%ptr->size; i != pos; i = (i - 1 + ptr->size) % ptr->size) {
         ptr->buffer[i].value = ptr->buffer[(i - 1 + ptr->size) % ptr->size].value;
     }
     ptr->buffer[pos].value = value;
