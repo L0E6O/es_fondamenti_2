@@ -7,14 +7,14 @@ struct list {
 };
 
 void nodeSwap(struct list **ptr, struct list **ptr2) {
-    struct list *tmp = *ptr;
-    struct list *tmp2 = *ptr2;
-    struct list *next = (*ptr)->next;
-    struct list *next2 = (*ptr2)->next;
-    tmp2->next = next;
-    *ptr = tmp2;
-    tmp->next = next2;
-    *ptr2 = tmp;
+    struct list *tmp = *ptr; //mi salvo il puntatore ad A
+    struct list *tmp2 = *ptr2; //mi salvo il puntatore a C
+    struct list *next = (*ptr)->next; //mi salvo il puntatore a B
+    struct list *next2 = (*ptr2)->next; //mi salvo il puntatore a D
+    tmp2->next = next; //imposto il next di C per puntare a B (tmp2->next punta cmq al vero next di C)
+    *ptr = tmp2; //imposto l'indirizzo del primo elemento uguale a quello di C
+    tmp->next = next2; //imposto il next di A per puntare a D
+    *ptr2 = tmp; //imposto l'indirizzo del secondo elemento (ex C) per puntare ad A
 }
 
 void esercizio(struct list **ptr, int *count) {
