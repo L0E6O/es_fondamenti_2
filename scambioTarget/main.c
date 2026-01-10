@@ -30,10 +30,11 @@ void scambio(struct list **l1, struct list **l2, int target1, int target2) {
         if (f1 && f2) {
             struct list *tmp1 = *pos1;
             struct list *tmp2 = *pos2;
-            struct list *tmpNext2 = (*pos2)->next;
-            tmp2->next = (*pos1)->next;
+            struct list *Next2 = (*pos2)->next; //basterebbe anche solo questo next
+            struct list *Next1 = (*pos1)->next;
+            tmp2->next = Next1;
             *pos1 = tmp2;
-            tmp1->next = tmpNext2;
+            tmp1->next = Next2;
             *pos2 = tmp1;
         }
     }
