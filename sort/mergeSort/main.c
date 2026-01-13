@@ -52,7 +52,7 @@ void mergeSort(struct record *v, int n) {
 
         // Divide
         mergeSort(v, m);
-        mergeSort(v + m, n - m);
+        mergeSort(v + m, n - m); //n-m è la lunghezza, non l'ultimo indice!!!
 
         // Impera (Merge ottimizzato)
         merge(v, n, m);
