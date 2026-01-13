@@ -47,7 +47,13 @@ void rimuovi(struct list **lA, struct list **lB, int v[], int n) {
     }
 }
 
-void ordInsert(int *v, int n, int value) {
+bool ordInsert(int *v, int n, int value) {
+    for (int k = 0; k < n; k++) {
+        if (v[k] == value) {
+            return false;
+        }
+    }
+
     int i = 0;
     while (i < n && value > v[i]) {
         i++;
@@ -56,6 +62,8 @@ void ordInsert(int *v, int n, int value) {
         v[j] = v[j-1];
     }
     v[i] = value;
+
+    return true;
 }
 
 void visit(struct list **l) {
@@ -113,10 +121,19 @@ int main() {
 
     for (int i = 0; i < n; ++i) {
         int val;
-        printf("Inserire la pos numero %d:\n", (i+1));
+        printf("Inserire una posizione:\n");
         scanf("%d", &val);
-        ordInsert(v, i, val);
+
+        if (!ordInsert(v, i, val)) {
+            printf("Errore: posizione %d gia' inserita! Riprova.\n", val);
+            i--;
+        }
     }
+
+    printf("STAMPO VECCHIE LISTE...\n");
+
+    visit(&lA);
+    visit(&lB);
 
     printf("APPLICO RIMOZIONE MIRATA...");
 
